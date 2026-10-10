@@ -1,0 +1,12 @@
+{
+  "name": "travel-together",
+  "private": true,
+  "description": "Runs the whole app (API + built React client) as one service. Used for deployment; for local development use the scripts inside server/ and client/.",
+  "engines": {
+    "node": ">=22.0.0 <23.0.0"
+  },
+  "scripts": {
+    "build": "npm install --include=dev --prefix client && npm run build --prefix client && npm install --prefix server",
+    "start": "npm run db:init --prefix server && npm start --prefix server"
+  }
+}
